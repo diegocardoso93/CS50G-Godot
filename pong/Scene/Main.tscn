@@ -6,14 +6,31 @@
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Welcome" type="Label" parent="."]
-margin_top = 1.0
+[node name="Label" type="Label" parent="."]
 margin_right = 1024.0
-margin_bottom = 597.0
+margin_bottom = 93.0
 rect_pivot_offset = Vector2( 20, 7 )
 size_flags_stretch_ratio = 0.0
 custom_fonts/font = ExtResource( 2 )
 text = "Welcome to Pong!
 Press Enter to begin!"
+align = 1
+valign = 1
+
+[node name="ScoreP1" type="Label" parent="."]
+margin_left = 68.185
+margin_top = 13.0465
+margin_right = 197.185
+margin_bottom = 81.0465
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="ScoreP2" type="Label" parent="."]
+margin_left = 835.844
+margin_top = 14.3388
+margin_right = 964.844
+margin_bottom = 82.3388
+custom_fonts/font = ExtResource( 2 )
 align = 1
 valign = 1

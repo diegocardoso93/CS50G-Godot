@@ -1,17 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/Paddle.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.44632, 61.7934 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_top = 0.19429
+[node name="Texture" type="ColorRect" parent="."]
 margin_right = 17.0
-margin_bottom = 124.194
+margin_bottom = 123.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 8.49584, 61.8626 )
+position = Vector2( 8.5, 61.5 )
 shape = SubResource( 1 )

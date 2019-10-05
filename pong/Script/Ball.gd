@@ -8,28 +8,27 @@ var x setget set_x, get_x
 var y setget set_y, get_y
 
 func _ready():
-	x = 0
-	y = 0
+	x = 500
+	y = 290
 
-func _process(delta):
-	x = x * dx * delta
-	y = y * dy * delta
+func render(delta):
+	self.x = self.x + dx * delta
+	self.y = self.y + dy * delta
 
 func collides(paddle):
-	if x > paddle.x + paddle.width or paddle.x > x + width:
+	if self.x > paddle.x + paddle.width - 12 or paddle.x > self.x + 8:
 		return false
-	
-	if y > paddle.y + paddle.height or paddle.y > y + height:
+
+	if self.y > paddle.y + paddle.height or paddle.y > self.y:
 		return false
 
 	return true
 
 func reset():
-	x = 290
-	y = 500
+	self.x = 500
+	self.y = 290
 	dy = 0
 	dx = 0
-
 
 func set_x(x):
 	self.position.x = x
