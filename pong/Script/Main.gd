@@ -35,23 +35,28 @@ func _process(delta):
 			ball.dx = -ball.dx * 1.03
 			ball.x = player1.x + 5
 			ball.dy = rand_range(10, 150) * (-1 if ball.dy < 0 else 1)
+			$PaddleHit.play()
 
 		if ball.collides(player2):
 			ball.dx = -ball.dx * 1.03
 			ball.x = player2.x - 5
 			ball.dy = rand_range(10, 150) * (-1 if ball.dy < 0 else 1)
+			$PaddleHit.play()
 
 		if ball.y <= 0:
 			ball.y = 0
 			ball.dy = -ball.dy
+			$WallHit.play()
 
 		if ball.y >= 600:
 			ball.y = 600
 			ball.dy = -ball.dy
+			$WallHit.play()
 
 		if ball.x < 0:
 			serving_player = 1
 			player2_score = player2_score + 1
+			$Score.play()
 
 			if player2_score == 10:
 				winning_player = 2
@@ -63,6 +68,7 @@ func _process(delta):
 		if ball.x > 1080:
 			serving_player = 2
 			player1_score = player1_score + 1
+			$Score.play()
 
 			if player1_score == 10:
 				winning_player = 1
