@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Start.gd" type="Script" id=1]
+[ext_resource path="res://Asset/background.png" type="Texture" id=2]
+[ext_resource path="res://Font/font.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 3 )
+
+[node name="Start" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 700.946, 302.634 )
+scale = Vector2( 4.6511, 4.6511 )
+texture = ExtResource( 2 )
+
+[node name="Serve" type="Label" parent="."]
+margin_top = 280.667
+margin_right = 1399.0
+margin_bottom = 334.667
+custom_fonts/font = SubResource( 1 )
+text = "Press Enter to serve!"
+align = 1
+valign = 1
