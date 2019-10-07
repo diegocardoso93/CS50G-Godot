@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Select.gd" type="Script" id=1]
 [ext_resource path="res://Asset/background.png" type="Texture" id=2]
 [ext_resource path="res://Font/font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Asset/paddle_select.tres" type="TileSet" id=4]
+[ext_resource path="res://Asset/paddle_types.tres" type="TileSet" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -37,3 +39,40 @@ custom_fonts/font = SubResource( 2 )
 text = "(Press Enter to continue!)"
 align = 1
 valign = 1
+
+[node name="PaddleLeft" type="TextureButton" parent="."]
+margin_left = 296.25
+margin_top = 381.675
+margin_right = 369.25
+margin_bottom = 456.675
+
+[node name="Texture" type="TileMap" parent="PaddleLeft"]
+position = Vector2( 0, 3 )
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 24, 24 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+
+[node name="PaddleRight" type="TextureButton" parent="."]
+margin_left = 1020.87
+margin_top = 389.031
+margin_right = 1093.87
+margin_bottom = 464.031
+
+[node name="Texture" type="TileMap" parent="PaddleRight"]
+position = Vector2( -358.65, -430.872 )
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 24, 24 )
+format = 1
+tile_data = PoolIntArray( 393221, 1, 0 )
+
+[node name="PaddleType" type="TileMap" parent="."]
+position = Vector2( 30, 18 )
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 131075, 2, 0 )
+[connection signal="pressed" from="PaddleLeft" to="." method="_on_PaddleLeft_pressed"]
+[connection signal="pressed" from="PaddleRight" to="." method="_on_PaddleRight_pressed"]
