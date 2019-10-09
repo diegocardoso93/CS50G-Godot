@@ -7,7 +7,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed('ui_accept'):
-		Global.selected_paddle = selected_paddle
+		Global['selected_paddle'] = selected_paddle
 		get_tree().change_scene('res://Scene/Start.tscn')
 
 func _on_PaddleLeft_pressed():
