@@ -19,6 +19,10 @@ config/name="breakout"
 run/main_scene="res://Scene/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Script/Global.gd"
+
 [display]
 
 window/size/width=1400
