@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Asset/bricks.tres" type="TileSet" id=1]
+
+[node name="Brick" type="Node2D"]
+
+[node name="Brick" type="TileMap" parent="."]
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
